@@ -1,0 +1,36 @@
+#search, #search_header{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+#search_field{
+    padding: 2px;
+    background-color: ghostwhite;
+}
+#search_title{
+    background-color: #efeff6;
+}
+#search_result{
+    background-color: lightsteelblue;
+}
+#result_title{
+    background-color: #a7bbd5;
+}
+#history_of_visit{
+    background-color: blanchedalmond;
+}
+#history_header{
+    background-color: #f6e2c6;
+    width: 100%;
+}
+.booking_list{
+    display: grid;
+    grid-template-columns: 2fr 200px 1fr;
+}
+.booking_list:hover{
+    background-color: aliceblue;
+}
+
+input{
+    border-width: 1px;
+    border-color: unset;
+}
