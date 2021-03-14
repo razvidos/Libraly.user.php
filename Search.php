@@ -18,8 +18,8 @@ class Search
     public function getBooks(){
         $filter = $this->filter;
 
-
         $books["booking"] = array();
+
         foreach ($filter as $fieldName => $field){
             if(in_array($fieldName, array('bookID', 'bookingBooks'))){
                 $fieldArray = explode(",",$field);

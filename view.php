@@ -29,12 +29,10 @@ $timeFields = array('date from', 'date to');
             }?>
             <input type="submit">
         </div>
-
         <div id="search_result">
             <input style="display: none" name="bookingBooks" value="<?php echo implode(',', $books["booking"]);?>">
             <ul>
-            <?php
-            foreach ($books["all"] as $book){
+            <?php foreach ($books["all"] as $book){
                 $style = '';
                 $un = '';
                 if(in_array($book["ID"], $books["booking"])) {
@@ -51,8 +49,7 @@ $timeFields = array('date from', 'date to');
                             ".$un."booking
                     </button>
                 </li>";
-            }
-            ?>
+            } ?>
             </ul>
     </div>
     </div>
