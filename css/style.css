@@ -1,6 +1,11 @@
+#search, #search_header, #history_of_visit, #book_info, #time_info{
+    display: grid; 
+}
 #search, #search_header{
-    display: grid;
     grid-template-columns: 1fr 2fr;
+}
+#history_of_visit{
+    grid-template-columns: 2fr 1fr;
 }
 #search_field{
     padding: 2px;
@@ -15,12 +20,23 @@
 #result_title{
     background-color: #a7bbd5;
 }
+
 #history_of_visit{
     background-color: blanchedalmond;
 }
 #history_header{
     background-color: #f6e2c6;
     width: 100%;
+}
+#history_of_visit > #book_info{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-right: 6px;    
+    padding: 2px;
+}
+#history_of_visit > #time_info{
+    grid-template-columns: 1fr 1fr;
+    padding: 2px;
+    /*background-color: #f6e2c5;*/
 }
 .booking_list{
     display: grid;

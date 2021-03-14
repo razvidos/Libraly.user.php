@@ -6,6 +6,7 @@
  * Time: 3:00 PM
  */
 $formFields = array('author', 'name', 'tag', 'yearPublished');
+$timeFields = array('date from', 'date to');
 
 //echo "<br>booking books = ";
 //print_r($books["booking"]);
@@ -58,5 +59,14 @@ $formFields = array('author', 'name', 'tag', 'yearPublished');
 </form>
 <div id="history_header">History Of Visit</div>
 <div id="history_of_visit">
-    history
+    <div id="book_info">
+        <?php foreach ($formFields as $formField){
+            echo "<div>".ucfirst($formField)."</div>";
+        }?>
+    </div>
+    <div id="time_info">
+        <?php foreach ($timeFields as $timeField){
+            echo "<div>".ucfirst($timeField)."</div>";
+        }?>
+    </div>
 </div>
