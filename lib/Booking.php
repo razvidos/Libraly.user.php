@@ -15,7 +15,8 @@ class Booking
     public static function remove($bookID){
     }
 
-    public static function getBooks(){
-
+    public static function getList(): array
+    {
+        return array();
     }
 }

@@ -13,6 +13,8 @@ if(isset($filter['bookingID']))
     {Booking::add($filter['bookingID']);}
 
 if(isset($filter['unbookID']))
-    {Booking::add($filter['unbookID']);}
+    {Booking::remove($filter['unbookID']);}
+
+$booking = Booking::getList();
 
 include 'view.php';
