@@ -6,16 +6,8 @@
  * Time: 10:50 PM
  */
 
-include 'Search.php';
-
-foreach ($_GET as $fieldName => $field) {
-    if($field != ''){
+foreach ($_POST as $fieldName => $field) {
+    if($field != '') {
         $filter[$fieldName] = $field;
     }
 }
-if(isset($filter)){
-    $search = new Search($filter);
-    $books = $search->getBooks();
-}
-
-include 'view.php';
