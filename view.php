@@ -8,6 +8,8 @@
 $formFields = array('author', 'name', 'tag', 'yearPublished');
 $timeFields = array('date from', 'date to');
 
+$booking = Booking::getList();
+$historyList = History::getList();
 ?>
 <head>
     <title>Библиотека</title>
@@ -22,9 +24,9 @@ $timeFields = array('date from', 'date to');
         <div id="search_field">
             <form action="search.handler.php" method="post">
                 <?php if(isset($filter)){
-                    foreach ($formFields as $formField){
-                    echo "<lable>".ucfirst($formField)."</lable><br>
-                        <input type='text' name='".$formField."' value='".$filter[$formField]."'><br><br>";
+                    foreach ($formFields as $formFieldName){
+                    echo "<lable>".ucfirst($formFieldName)."</lable><br>
+                        <input type='text' name='".$formFieldName."' value='".$filter[$formFieldName]."'><br><br>";
                     }
                 }?>
                 <input type="submit">
@@ -37,7 +39,7 @@ $timeFields = array('date from', 'date to');
                     foreach ($books as $book){
                         $style = '';
                         $un = '';
-                        if(in_array($book["ID"], $books["booking"])) {
+                        if(in_array($book["ID"], $booking)) {
                             $style = 'background-color: cadetblue;';
                             $un = 'un';
                         }
@@ -61,13 +63,26 @@ $timeFields = array('date from', 'date to');
 <div id="history_header">History Of Visit</div>
 <div id="history_of_visit">
     <div id="book_info">
-        <?php foreach ($formFields as $formField){
-            echo "<div>".ucfirst($formField)."</div>";
+        <?php
+        foreach ($formFields as $formFieldName){
+            echo "<div>".ucfirst($formFieldName)."</div>";
+        }
+        foreach ($historyList as $historyElement){
+            foreach ($formFields as $formFieldName){
+                echo "<span>".$historyElement[$formFieldName]."</span>";
+            }
         }?>
     </div>
     <div id="time_info">
-        <?php foreach ($timeFields as $timeField){
-            echo "<div>".ucfirst($timeField)."</div>";
-        }?>
+
+        <?php
+        foreach ($timeFields as $timeFieldName){
+            echo "<div>".ucfirst($timeFieldName)."</div>";
+        }
+        foreach ($historyList as $historyElement){
+            foreach ($timeFields as $timeFieldName){
+                echo "<span>".$historyElement[$timeFieldName]."</span>";
+            }
+        } ?>
     </div>
 </div>

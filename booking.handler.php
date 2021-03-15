@@ -12,8 +12,8 @@ require 'handle.php';
 if(isset($filter['bookingID']))
     {Booking::add($filter['bookingID']);}
 
-if(isset($filter['unbookID']))
-    {Booking::remove($filter['unbookID']);}
+if(isset($filter['unbookingID']))
+    {Booking::remove($filter['unbookingID']);}
 
 $booking = Booking::getList();
 

@@ -8,4 +8,8 @@
 
 class History
 {
+    public static function getList() : array
+    {
+        return array();
+    }
 }
