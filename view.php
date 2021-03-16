@@ -14,7 +14,7 @@ $teamplates = new View();
     <title>Библиотека</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
+<body>
 <div id="search_header">
     <span id="search_title">Search</span>
     <span id="result_title">Result</span>
@@ -22,7 +22,8 @@ $teamplates = new View();
     <div id="search">
         <div id="search_field">
             <form action="search.handler.php" method="post">
-                <?php if(isset($filter)){$teamplates->insertSearchForm($filter);}?>
+                <?php if (!isset($filter)){$filter = array();}
+                $teamplates->insertSearchForm($filter);?>
                 <input type="submit">
             </form>
         </div>
@@ -45,3 +46,4 @@ $teamplates = new View();
         <?php $teamplates->insertHistoryTimeInfo(); ?>
     </div>
 </div>
+</body>
