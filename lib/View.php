@@ -3,6 +3,7 @@
 
 class View
 {
+    // XXX make constant
     private $formFields = array('author', 'name', 'tag', 'yearPublished');
     private $timeFields = array('date from', 'date to');
     private $bookingList;
@@ -18,8 +19,14 @@ class View
     {
         $formFields = $this->formFields;
         foreach ($formFields as $formFieldName){
-            echo "<lable>".ucfirst($formFieldName)."</lable><br>
-                        <input type='text' name='".$formFieldName."' value='".$filter[$formFieldName]."'><br><br>";
+            echo "
+                <lable>".ucfirst($formFieldName)."</lable>
+                <br>
+                <input 
+                    type='text' 
+                    name='".$formFieldName."' 
+                    value='".$filter[$formFieldName]."'>
+                <br><br>";
         }
     }
 
