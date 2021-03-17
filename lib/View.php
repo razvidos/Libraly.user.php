@@ -1,4 +1,6 @@
 <?php
+require_once 'History.php';
+require_once 'Booking.php';
 
 
 class View
@@ -20,6 +22,8 @@ class View
         $formFields = $this->formFields;
         foreach ($formFields as $formFieldName)
         {
+        	if(!isset($filter[$formFieldName]))
+        		{$filter[$formFieldName] = '';}
             echo "
                 <lable>".ucfirst($formFieldName)."</lable>
                 <br>
