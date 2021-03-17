@@ -9,10 +9,12 @@
 class Booking
 {
 
-    public static function add($bookID){
+    public static function add($bookID)
+    {
     }
 
-    public static function remove($bookID){
+    public static function remove($bookID)
+    {
     }
 
     public static function getList(): array

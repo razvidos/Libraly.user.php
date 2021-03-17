@@ -11,7 +11,8 @@ class Search
     private $filter;
 
 
-    public function __construct($filter){
+    public function __construct($filter)
+    {
         $this->filter = $filter;
     }
 

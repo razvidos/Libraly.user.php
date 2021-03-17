@@ -9,7 +9,8 @@
 require 'lib/Search.php';
 require 'handle.php';
 
-if(isset($filter)){
+if(isset($filter))
+{
     $search = new Search($filter);
     $books = $search->getBooks();
 }

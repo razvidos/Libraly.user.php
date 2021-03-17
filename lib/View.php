@@ -18,7 +18,8 @@ class View
     public function insertSearchForm($filter)  // from search.handle
     {
         $formFields = $this->formFields;
-        foreach ($formFields as $formFieldName){
+        foreach ($formFields as $formFieldName)
+        {
             echo "
                 <lable>".ucfirst($formFieldName)."</lable>
                 <br>
@@ -33,10 +34,12 @@ class View
     public function insertBookingList($books)  // from search.handle
     {
         $bookingList = $this->bookingList;
-        foreach ($books as $book){
+        foreach ($books as $book)
+        {
             $style = '';
             $un = '';
-            if(in_array($book["ID"], $bookingList)) {
+            if(in_array($book["ID"], $bookingList))
+            {
                 $style = 'background-color: cadetblue;';
                 $un = 'un';
             }
@@ -53,29 +56,36 @@ class View
         }
     }
 
-    public function insertHistoryBookInfo(){
+    public function insertHistoryBookInfo()
+    {
         $formFields = $this->formFields;
         $historyList = $this->historyList;
 
-        foreach ($formFields as $formFieldName){
+        foreach ($formFields as $formFieldName)
+        {
             echo "<div>".ucfirst($formFieldName)."</div>";
         }
-        foreach ($historyList as $historyElement){
-            foreach ($formFields as $formFieldName){
+        foreach ($historyList as $historyElement)
+        {
+            foreach ($formFields as $formFieldName)
+            {
                 echo "<span>".$historyElement[$formFieldName]."</span>";
             }
         }
     }
 
-    public function insertHistoryTimeInfo(){
+    public function insertHistoryTimeInfo()
+    {
         $timeFields = $this->timeFields;
         $historyList = $this->historyList;
 
         foreach ($timeFields as $timeFieldName){
             echo "<div>".ucfirst($timeFieldName)."</div>";
         }
-        foreach ($historyList as $historyElement){
-            foreach ($timeFields as $timeFieldName){
+        foreach ($historyList as $historyElement)
+        {
+            foreach ($timeFields as $timeFieldName)
+            {
                 echo "<span>".$historyElement[$timeFieldName]."</span>";
             }
         }
