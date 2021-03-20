@@ -46,4 +46,6 @@ $teamplates = new View();
         <?php $teamplates->insertHistoryTimeInfo(); ?>
     </div>
 </div>
+<?php if (isset($_SESSION['Error message']))
+    {$teamplates::errorAlert($_SESSION['Error message']);} ?>
 </body>

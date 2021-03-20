@@ -1,19 +1,16 @@
 <?php
 
-use JetBrains\PhpStorm\Pure;
-
-require 'History.php';
+require $_SERVER['DOCUMENT_ROOT']. '/lib/History.php';
 
 
 class View
 {
-    // XXX make constant
     private array $formFields;
     private array $timeFields;
     private array $bookingList;
     private array $historyList;
 
-    #[Pure] public function __construct()
+    public function __construct()
     {
 		$this->formFields = FieldsName::getSearchFieldNames();
 		$this->timeFields = FieldsName::getTimeFieldNames();
@@ -98,4 +95,11 @@ class View
             }
         }
     }
+
+    public static function errorAlert($message){
+    	echo
+		'<script>'
+			.'alert("'.$message.'");'
+		.'</script>';
+	}
 }
