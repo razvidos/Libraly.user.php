@@ -11,14 +11,19 @@ class Booking
 
     public static function add($bookID)
     {
+		$_SESSION['bookingList'][$bookID] = $bookID;
     }
 
     public static function remove($bookID)
     {
+		unset($_SESSION['bookingList'][$bookID]);
+		$_SESSION['unbookingID'] = null;
     }
 
     public static function getList(): array
     {
-        return array();
+		if (!isset($_SESSION['bookingList']))
+        	return array('null' => 'array');
+		return $_SESSION['bookingList'];
     }
 }

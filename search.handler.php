@@ -8,7 +8,8 @@
 
 require 'lib/Search.php';
 
-if(isset($filter))
+
+if(isset($_SESSION))
 {
 	// get search fields
 	$searchFieldNames = FieldsName::getSearchFieldNames();

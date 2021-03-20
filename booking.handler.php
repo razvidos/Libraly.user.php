@@ -8,12 +8,10 @@
 
 require 'lib/Booking.php';
 
-if(isset($filter['bookingID']))
-    {Booking::add($filter['bookingID']);}
+if(isset($_SESSION['bookingID']))
+    {Booking::add($_SESSION['bookingID']);}
 
-if(isset($filter['unbookingID']))
-    {Booking::remove($filter['unbookingID']);}
+if(isset($_SESSION['unbookingID']))
+    {Booking::remove($_SESSION['unbookingID']);}
 
 $booking = Booking::getList();
-
-include 'view.php';

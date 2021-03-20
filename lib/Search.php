@@ -8,7 +8,7 @@
 
 class Search
 {
-    private $filter;
+	private $filter;
 
 
     public function __construct($filter)

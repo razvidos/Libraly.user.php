@@ -6,10 +6,15 @@
  * Time: 10:50 PM
  */
 
+session_start();
+
 foreach ($_POST as $fieldName => $field)
 {
-    if($field != '')
+    if(isset($field) || isset($_SESSION[$fieldName]))
     {
-        $filter[$fieldName] = $field;
+		$_SESSION[$fieldName] = $field;
     }
 }
+
+if(isset($_SESSION['resetSession']))
+	{session_unset();}
