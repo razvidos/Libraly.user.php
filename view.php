@@ -48,7 +48,6 @@ $templates = new Template();
         <?php $templates->insertHistoryBookInfo(); ?>
     </div>
     <div id="time_info">
-
         <?php $templates->insertHistoryTimeInfo(); ?>
     </div>
 </div>
