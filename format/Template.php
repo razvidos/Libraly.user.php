@@ -3,7 +3,7 @@
 require $_SERVER['DOCUMENT_ROOT']. '/lib/History.php';
 
 
-class View
+class Template
 {
     private array $formFields;
     private array $timeFields;

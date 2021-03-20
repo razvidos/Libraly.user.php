@@ -12,9 +12,9 @@ require $_SERVER['DOCUMENT_ROOT']. '/data/FieldsName.php';
 require $_SERVER['DOCUMENT_ROOT']. '/booking.handler.php';
 require $_SERVER['DOCUMENT_ROOT']. '/search.handler.php';
 
-require $_SERVER['DOCUMENT_ROOT']. '/format/View.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/format/Template.php';
 
-$teamplates = new View();
+$templates = new Template();
 ?>
 <head>
     <title>Библиотека</title>
@@ -28,7 +28,7 @@ $teamplates = new View();
     <div id="search">
         <div id="search_field">
             <form method="post">
-                <?php $teamplates->insertSearchForm($_SESSION);?>
+                <?php $templates->insertSearchForm($_SESSION);?>
                 <button type="submit">Submit</button>
                 <button name="resetSession">Reset</button>
             </form>
@@ -36,7 +36,7 @@ $teamplates = new View();
         <div id="search_result">
             <form method="post">
                 <ul>
-                <?php if(isset($books)) {$teamplates->insertBookingList($books);}?>
+                <?php if(isset($books)) {$templates->insertBookingList($books);}?>
                 </ul>
             </form>
         </div>
@@ -45,13 +45,13 @@ $teamplates = new View();
 <div id="history_header">History Of Visit</div>
 <div id="history_of_visit">
     <div id="book_info">
-        <?php $teamplates->insertHistoryBookInfo(); ?>
+        <?php $templates->insertHistoryBookInfo(); ?>
     </div>
     <div id="time_info">
 
-        <?php $teamplates->insertHistoryTimeInfo(); ?>
+        <?php $templates->insertHistoryTimeInfo(); ?>
     </div>
 </div>
 <?php if (isset($_SESSION['Error message']))
-    {$teamplates::errorAlert($_SESSION['Error message']);} ?>
+    {$templates::errorAlert($_SESSION['Error message']);} ?>
 </body>
