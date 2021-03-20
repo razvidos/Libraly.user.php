@@ -1,36 +1,40 @@
 <?php
-require_once 'History.php';
-require_once 'Booking.php';
+
+use JetBrains\PhpStorm\Pure;
+
+require 'History.php';
 
 
 class View
 {
     // XXX make constant
-    private $formFields = array('author', 'name', 'tag', 'yearPublished');
-    private $timeFields = array('date from', 'date to');
-    private $bookingList;
-    private $historyList;
+    private array $formFields;
+    private array $timeFields;
+    private array $bookingList;
+    private array $historyList;
 
-    public function __construct()
+    #[Pure] public function __construct()
     {
-        $this->bookingList = Booking::getList();
-        $this->historyList = History::getList();
+		$this->formFields = FieldsName::getSearchFieldNames();
+		$this->timeFields = FieldsName::getTimeFieldNames();
+		$this->bookingList = Booking::getList();
+		$this->historyList = History::getList();
     }
 
-    public function insertSearchForm($filter)  // from search.handle
+    public function insertSearchForm($filters)  // from search.handle
     {
         $formFields = $this->formFields;
         foreach ($formFields as $formFieldName)
         {
-        	if(!isset($filter[$formFieldName]))
-        		{$filter[$formFieldName] = '';}
+        	if(!isset($filters[$formFieldName]))
+        		{$filters[$formFieldName] = '';}
             echo "
                 <lable>".ucfirst($formFieldName)."</lable>
                 <br>
                 <input 
                     type='text' 
                     name='".$formFieldName."' 
-                    value='".$filter[$formFieldName]."'>
+                    value='".$filters[$formFieldName]."'>
                 <br><br>";
         }
     }

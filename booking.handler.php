@@ -7,7 +7,6 @@
  */
 
 require 'lib/Booking.php';
-require 'handle.php';
 
 if(isset($filter['bookingID']))
     {Booking::add($filter['bookingID']);}

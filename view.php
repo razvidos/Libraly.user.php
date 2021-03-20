@@ -21,14 +21,14 @@ $teamplates = new View();
 </div>
     <div id="search">
         <div id="search_field">
-            <form action="search.handler.php" method="post">
-                <?php if (!isset($filter)){$filter = array();}
-                $teamplates->insertSearchForm($filter);?>
-                <input type="submit">
+            <form method="post">
+                <?php $teamplates->insertSearchForm($_SESSION);?>
+                <button type="submit">Submit</button>
+                <button name="resetSession">Reset</button>
             </form>
         </div>
         <div id="search_result">
-            <form action="booking.handler.php" method="post">
+            <form method="post">
                 <ul>
                 <?php if(isset($books)) {$teamplates->insertBookingList($books);}?>
                 </ul>

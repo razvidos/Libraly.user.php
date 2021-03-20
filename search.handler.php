@@ -7,12 +7,19 @@
  */
 
 require 'lib/Search.php';
-require 'handle.php';
 
 if(isset($filter))
 {
-    $search = new Search($filter);
-    $books = $search->getBooks();
-}
+	// get search fields
+	$searchFieldNames = FieldsName::getSearchFieldNames();
+	foreach ($_SESSION as $filterField => $filterValue){
+		if(in_array($filterField, $searchFieldNames)){
+			$searchFilter[$filterField] = $filterValue;
+		}
+	}
 
-include 'view.php';
+	if(isset($searchFilter)){
+		$search = new Search($searchFilter);
+		$books = $search->getBooks();
+	}
+}
