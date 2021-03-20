@@ -21,7 +21,7 @@ if(!isset($_POST['resetSession'])){
 
 	try {
 		$error = YearException::getErrorMessage();
-		if($error['MESS'] != ''){
+		if($error['CODE'] != 0){
 			$logFile = fopen(
 				$_SERVER['DOCUMENT_ROOT'].'/logs/log.txt',
 				'a');
