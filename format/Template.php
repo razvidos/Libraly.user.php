@@ -98,7 +98,7 @@ class Template
 
     public static function errorAlert($message){
     	echo
-		'<script type="javascript">'
+		'<script type="text/javascript">'
 			.'alert("'.$message.'");'
 		.'</script>';
 	}
