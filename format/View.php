@@ -12,8 +12,8 @@ class View
 
     public function __construct()
     {
-		$this->formFields = FieldsName::getSearchFieldNames();
-		$this->timeFields = FieldsName::getTimeFieldNames();
+		$this->formFields = $GLOBALS['FIELD_NAME']['SEARCH'];
+		$this->timeFields = $GLOBALS['FIELD_NAME']['TIME'];
 		$this->bookingList = Booking::getList();
 		$this->historyList = History::getList();
     }

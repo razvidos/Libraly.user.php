@@ -6,7 +6,13 @@
  * Time: 3:00 PM
  */
 
-require 'lib/View.php';
+
+require $_SERVER['DOCUMENT_ROOT']. '/handle.php';
+require $_SERVER['DOCUMENT_ROOT']. '/data/FieldsName.php';
+require $_SERVER['DOCUMENT_ROOT']. '/booking.handler.php';
+require $_SERVER['DOCUMENT_ROOT']. '/search.handler.php';
+
+require $_SERVER['DOCUMENT_ROOT']. '/format/View.php';
 
 $teamplates = new View();
 ?>

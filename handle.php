@@ -6,7 +6,7 @@
  * Time: 10:50 PM
  */
 
-require 'lib/Exception/YearException.php';
+require $_SERVER['DOCUMENT_ROOT']. '/lib/Exception/YearException.php';
 
 session_start();
 
@@ -23,9 +23,22 @@ if(!isset($_POST['resetSession'])){
 	}
 
 	try {
-		$errorMessage = YearException::getErrorMessage();
-		if($errorMessage != ''){
-			throw new Exception($errorMessage);
+		$error = YearException::getErrorMessage();
+		if($error['MESS'] != ''){
+			$logFile = fopen(
+				$_SERVER['DOCUMENT_ROOT'].'/logs/log.txt',
+				'a');
+			$data =
+				date("Y-m-d H:i:s\t")
+				.$_SERVER['USER']
+				. '@'
+				.$_SERVER['REMOTE_ADDR']
+				. "\t"
+				.$error['CODE']
+				. "\n";
+			fwrite($logFile, $data);
+			fclose($logFile);
+			throw new Exception($error['MESS']);
 		}
 	} catch (Exception $exception){
 		$_SESSION['Error message'] = $exception->getMessage();
