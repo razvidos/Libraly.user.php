@@ -12,7 +12,7 @@ require 'lib/Search.php';
 if(isset($_SESSION))
 {
 	// get search fields
-	$searchFieldNames = FieldsName::getSearchFieldNames();
+	$searchFieldNames = $GLOBALS['FIELD_NAME']['SEARCH'];
 	foreach ($_SESSION as $filterField => $filterValue){
 		if(in_array($filterField, $searchFieldNames)){
 			$searchFilter[$filterField] = $filterValue;
