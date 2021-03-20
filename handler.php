@@ -10,9 +10,6 @@ require $_SERVER['DOCUMENT_ROOT']. '/lib/Exception/YearException.php';
 
 session_start();
 
-if(isset($_SESSION['Error message']))
-	{$_SESSION['Error message'] = null;}
-
 if(!isset($_POST['resetSession'])){
 	foreach ($_POST as $fieldName => $field)
 	{

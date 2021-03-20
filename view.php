@@ -52,6 +52,8 @@ $templates = new Template();
         <?php $templates->insertHistoryTimeInfo(); ?>
     </div>
 </div>
-<?php if (isset($_SESSION['Error message']))
-    {$templates::errorAlert($_SESSION['Error message']);} ?>
+<?php if (isset($_SESSION['Error message'])) {
+    $templates::errorAlert($_SESSION['Error message']);
+	$_SESSION['Error message'] = null;
+} ?>
 </body>
