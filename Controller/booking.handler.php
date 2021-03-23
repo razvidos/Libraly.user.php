@@ -8,10 +8,12 @@
 
 require $_SERVER['DOCUMENT_ROOT']. '/Model/Booking.php';
 
-if(isset($_SESSION['bookingID']))
-    {Booking::add($_SESSION['bookingID']);}
+if(isset($_SESSION['bookingID']) && !in_array($_SESSION['bookingID'], Booking::getList())) {
+	Booking::add($_SESSION['bookingID']);
+	unset($_SESSION['bookingID']);
+    }
 
-if(isset($_SESSION['unbookingID']))
-    {Booking::remove($_SESSION['unbookingID']);}
-
-$booking = Booking::getList();
+if(isset($_SESSION['unbookingID']) && in_array($_SESSION['unbookingID'], Booking::getList())) {
+	Booking::remove($_SESSION['unbookingID']);
+	unset($_SESSION['unbookingID']);
+}
