@@ -6,9 +6,16 @@
  * Time: 10:50 PM
  */
 
-require $_SERVER['DOCUMENT_ROOT']. '/lib/Exception/YearException.php';
 
 session_start();
+
+require $_SERVER['DOCUMENT_ROOT'] . '/Model/Exception/YearException.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/Model/DataBase.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/Model/User.php';
+
+global $USER;
+
+$userID = $USER->getID();
 
 if(!isset($_POST['resetSession'])){
 	foreach ($_POST as $fieldName => $field)

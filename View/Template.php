@@ -1,6 +1,6 @@
 <?php
 
-require $_SERVER['DOCUMENT_ROOT']. '/lib/History.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/Model/History.php';
 
 
 class Template
