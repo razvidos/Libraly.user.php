@@ -6,12 +6,11 @@
  * Time: 10:50 PM
  */
 
-require 'lib/Search.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/Model/Search.php';
 
 
 if(isset($_SESSION))
 {
-	// get search fields
 	$searchFieldNames = $GLOBALS['FIELD_NAME']['SEARCH'];
 	foreach ($_SESSION as $filterField => $filterValue){
 		if(in_array($filterField, $searchFieldNames)){

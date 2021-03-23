@@ -7,12 +7,12 @@
  */
 
 
-require $_SERVER['DOCUMENT_ROOT'] . '/handler.php';
-require $_SERVER['DOCUMENT_ROOT']. '/data/FieldsName.php';
-require $_SERVER['DOCUMENT_ROOT']. '/booking.handler.php';
-require $_SERVER['DOCUMENT_ROOT']. '/search.handler.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/Controller/handler.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/data/FieldsName.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/Controller/booking.handler.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/Controller/search.handler.php';
 
-require $_SERVER['DOCUMENT_ROOT'] . '/format/Template.php';
+require 'Template.php';
 
 $templates = new Template();
 ?>

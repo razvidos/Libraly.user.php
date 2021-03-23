@@ -6,7 +6,7 @@
  * Time: 10:50 PM
  */
 
-require 'lib/Booking.php';
+require $_SERVER['DOCUMENT_ROOT']. '/Model/Booking.php';
 
 if(isset($_SESSION['bookingID']))
     {Booking::add($_SESSION['bookingID']);}
