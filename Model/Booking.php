@@ -18,7 +18,6 @@ class Booking
 		INSERT INTO library.history (BOOK_ID, USER_ID)
 		    VALUE ('".$bookID."', '".$userID."');";
 		$DB->myQuery($sql);
-		$_SESSION['bookingList'][$bookID] = $bookID;
     }
 
     public static function remove($bookID)
@@ -34,7 +33,7 @@ class Booking
 		  AND DATA_TO is null
 		;";
 		$DB->myQuery($sql);
-		unset($_SESSION['bookingList'][$bookID]);
+//		unset($_SESSION['bookingList'][$bookID]);
     }
 
     public static function getList(): array
