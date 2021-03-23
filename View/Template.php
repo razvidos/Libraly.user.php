@@ -36,20 +36,22 @@ class Template
         }
     }
 
-    public function insertBookingList($books)  // from search.handle
+    public function insertBookingList($books)
     {
         $bookingList = $this->bookingList;
+        $even = 'even';
         foreach ($books as $book)
         {
             $style = '';
             $un = '';
-            if(in_array($book["ID"], $bookingList))
+            if ($even){$even = '';} else {$even = 'even';}
+            if (in_array($book["ID"], $bookingList))
             {
                 $style = 'background-color: cadetblue;';
                 $un = 'un';
             }
 
-            echo "<li class='booking_list' style='".$style."'>
+            echo "<li class='booking_list ".$even."' style='".$style."'>
                             <span>" .$book['VALUE']. "</span>
                             <button 
                                 type='submit' 
@@ -63,38 +65,24 @@ class Template
 
     public function insertHistoryBookInfo()
     {
-        $formFields = $this->formFields;
+        $fields = array_merge($this->formFields, $this->timeFields);
         $historyList = $this->historyList;
+		$even = 'even';
 
-        foreach ($formFields as $formFieldName)
+        foreach ($fields as $formFieldName)
         {
             echo "<div>".ucfirst($formFieldName)."</div>";
         }
         foreach ($historyList as $historyElement)
         {
-            foreach ($formFields as $formFieldName)
+			if ($even){$even = '';} else {$even = 'even';}
+            foreach ($historyElement as $title => $value)
             {
-                echo "<span>".$historyElement[$formFieldName]."</span>";
+            	echo "<span class='history ".$even."'>".$value."</span>";
             }
         }
     }
 
-    public function insertHistoryTimeInfo()
-    {
-        $timeFields = $this->timeFields;
-        $historyList = $this->historyList;
-
-        foreach ($timeFields as $timeFieldName){
-            echo "<div>".ucfirst($timeFieldName)."</div>";
-        }
-        foreach ($historyList as $historyElement)
-        {
-            foreach ($timeFields as $timeFieldName)
-            {
-                echo "<span>".$historyElement[$timeFieldName]."</span>";
-            }
-        }
-    }
 
     public static function errorAlert($message){
     	echo

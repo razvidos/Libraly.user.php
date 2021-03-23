@@ -4,9 +4,9 @@
 #search, #search_header{
     grid-template-columns: 1fr 2fr;
 }
-#history_of_visit{
-    grid-template-columns: 2fr 1fr;
-}
+/*#history_of_visit{*/
+/*    grid-template-columns: 2fr 1fr;*/
+/*}*/
 #search_field{
     padding: 2px;
     background-color: ghostwhite;
@@ -29,18 +29,24 @@
     width: 100%;
 }
 #history_of_visit > #book_info{
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     margin-right: 6px;    
     padding: 2px;
 }
-#history_of_visit > #time_info{
-    grid-template-columns: 1fr 1fr;
-    padding: 2px;
-    /*background-color: #f6e2c5;*/
+/*#history_of_visit > #time_info{*/
+/*    grid-template-columns: 1fr 1fr;*/
+/*    padding: 2px;*/
+/*    !*background-color: #f6e2c5;*!*/
+/*}*/
+.history.even{
+    background-color: #f0ddc0;
 }
 .booking_list{
     display: grid;
     grid-template-columns: 2fr 200px 1fr;
+}
+.booking_list.even{
+    background-color: #a1b4cc;
 }
 .booking_list:hover{
     background-color: aliceblue;
