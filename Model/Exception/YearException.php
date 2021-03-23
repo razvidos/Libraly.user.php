@@ -1,5 +1,5 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'].'/format/YearFormat.php';
+require 'YearFormat.php';
 require $_SERVER['DOCUMENT_ROOT']. '/data/ExceptionText.php';
 
 

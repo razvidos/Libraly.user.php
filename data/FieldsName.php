@@ -2,11 +2,11 @@
 
 $FIELD_NAME['SEARCH'] = array(
 	'author',
-	'name',
+	'title',
 	'tag',
-	'yearPublished'
+	'year_published'
 );
 $FIELD_NAME['TIME'] = array(
-	'date from',
-	'date to'
+	'date_from',
+	'date_to'
 );
