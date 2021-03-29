@@ -7,8 +7,6 @@
  */
 
 
-session_start();
-
 require $_SERVER['DOCUMENT_ROOT'] . '/Model/Exception/YearException.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/Model/DataBase.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/Model/User.php';
@@ -46,5 +44,6 @@ if(!isset($_POST['resetSession'])){
 		}
 	} catch (Exception $exception){
 		$_SESSION['Error message'] = $exception->getMessage();
+		$_SESSION['Error code'] = $error['CODE'];
 	}
 } else {session_unset();}

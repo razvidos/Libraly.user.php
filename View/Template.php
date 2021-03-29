@@ -1,6 +1,10 @@
 <?php
 
 require $_SERVER['DOCUMENT_ROOT'] . '/Model/History.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/data/language/'.$_SESSION['language'].'/FieldsName.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/data/language/'.$_SESSION['language'].'/ExceptionText.php';
+global $EXCEPT_MESS;
+global $FIELD_NAMEs;
 
 
 class Template
@@ -12,13 +16,13 @@ class Template
 
     public function __construct()
     {
-		$this->formFields = $GLOBALS['FIELD_NAME']['SEARCH'];
-		$this->timeFields = $GLOBALS['FIELD_NAME']['TIME'];
+		$this->formFields = $GLOBALS['FIELD_NAMEs']['SEARCH'];
+		$this->timeFields = $GLOBALS['FIELD_NAMEs']['TIME'];
 		$this->bookingList = Booking::getList();
 		$this->historyList = History::getList();
     }
 
-    public function insertSearchForm($filters)  // from search.handle
+    public function insertSearchForm($filters)
     {
         $formFields = $this->formFields;
         foreach ($formFields as $formFieldName)

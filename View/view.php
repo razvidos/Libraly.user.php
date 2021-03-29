@@ -51,12 +51,12 @@ $templates = new Template();
 
 <div id="history_header"><?php echo $DOCUMENT['history'];?></div>
 <div id="history_of_visit">
-    <div id="book_info">
-        <?php $templates->insertHistoryBookInfo(); ?>
-    </div>
+	<div id="book_info">
+		<?php $templates->insertHistoryBookInfo(); ?>
+	</div>
 </div>
 <?php if (isset($_SESSION['Error message'])) {
-    $templates::errorAlert($_SESSION['Error message']);
+	$templates::errorAlert($_SESSION['Error message']);
 	$_SESSION['Error message'] = null;
 } ?>
 </body>

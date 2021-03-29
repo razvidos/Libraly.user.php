@@ -5,7 +5,6 @@ class User
 {
 	private int $id;
 
-
 	public function __construct(){
 		global $DB;
 		$session_id = session_id();
@@ -29,9 +28,8 @@ class User
 			$this->id = $result['USER_ID'];
 		}
 	}
+
 	public function getID() :int
-	{
-		return $this->id;
-	}
+		{return $this->id;}
 }
 $USER = new User();

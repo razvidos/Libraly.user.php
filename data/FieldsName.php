@@ -1,5 +1,4 @@
 <?php
-
 $FIELD_NAME['SEARCH'] = array(
 	'author',
 	'title',
