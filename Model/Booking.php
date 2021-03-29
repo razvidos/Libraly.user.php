@@ -33,7 +33,6 @@ class Booking
 		  AND DATA_TO is null
 		;";
 		$DB->myQuery($sql);
-//		unset($_SESSION['bookingList'][$bookID]);
     }
 
     public static function getList(): array

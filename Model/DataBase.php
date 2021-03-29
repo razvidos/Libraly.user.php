@@ -12,8 +12,6 @@ class DataBase extends PDO
 		$username = 'root';
 		$password = '1234567z';
 		parent::__construct($dsn, $username, $password);
-//		$sql = $this->prepare('Use library;');
-//		$sql->execute();
 	}
 
 	/**
