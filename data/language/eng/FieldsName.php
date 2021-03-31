@@ -1,9 +1,9 @@
 <?php
 $FIELD_NAMEs['SEARCH'] = array(
-	'Author',
-	'Title',
-	'Tag',
-	'Year_published'
+	'author' => 'Author',
+	'title' => 'Title',
+	'tag' => 'Tag',
+	'year_published' => 'Year published'
 );
 $FIELD_NAMEs['TIME'] = array(
 	'Date from',

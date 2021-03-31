@@ -1,11 +1,10 @@
 <?php
 require 'YearFormat.php';
-require $_SERVER['DOCUMENT_ROOT']. '/data/ExceptionText.php';
 
 
 class YearException
 {
-	public static function getErrorMessage() :array
+	public static function getErrorCode() :string
 	{
 
 		if (isset($_SESSION['year_published'])){
@@ -13,29 +12,20 @@ class YearException
 				$splitYear = str_split($_SESSION['year_published']);
 				if (!is_numeric($_SESSION['year_published'])) {
 					$_SESSION['year_published'] = intval($_SESSION['year_published']);
-					return array(
-						'MESS' =>
-							$GLOBALS['EXCEPT_MESS']['YEAR_IS_NOT_NUMERIC'],
-						'CODE' => 'YEAR_IS_NOT_NUMERIC');
+					return 'YEAR_IS_NOT_NUMERIC';
 				}
 
 				if (count($splitYear) > 4) {
-					return array(
-						'MESS' =>
-							$GLOBALS['EXCEPT_MESS']['YEAR_MORE_THAT_4_DIGITS'],
-						'CODE' => 'YEAR_MORE_THAT_4_DIGITS');
+					return 'YEAR_MORE_THAT_4_DIGITS';
 				} else {
 					YearFormat::setYear($splitYear);
 				}
 
 				if ($_SESSION['year_published'] > date('Y')) {
-					return array(
-						'MESS' =>
-							$GLOBALS['EXCEPT_MESS']['YEAR_IS_TOO_LARGE'],
-						'CODE' => 'YEAR_IS_TOO_LARGE');
+					return 'YEAR_IS_TOO_LARGE';
 				}
 			}
 		}
-		return array('MESS' => '', 'CODE' => 0);
+		return 0;
 	}
 }

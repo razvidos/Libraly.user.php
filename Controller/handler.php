@@ -25,8 +25,8 @@ if(!isset($_POST['resetSession'])){
 	}
 
 	try {
-		$error = YearException::getErrorMessage();
-		if($error['CODE'] != 0){
+		$errorCode = YearException::getErrorCode();
+		if($errorCode != 0){
 			$logFile = fopen(
 				$_SERVER['DOCUMENT_ROOT'].'/logs/log.txt',
 				'a');
@@ -36,14 +36,16 @@ if(!isset($_POST['resetSession'])){
 				. '@'
 				.$_SERVER['REMOTE_ADDR']
 				. "\t"
-				.$error['CODE']
+				.$errorCode
 				. "\n";
 			fwrite($logFile, $data);
 			fclose($logFile);
-			throw new Exception($error['MESS']);
+			throw new Exception($errorCode);
 		}
 	} catch (Exception $exception){
-		$_SESSION['Error message'] = $exception->getMessage();
-		$_SESSION['Error code'] = $error['CODE'];
+		$_SESSION['Error code'] = $errorCode;
 	}
-} else {session_unset();}
+} else {
+	session_unset();
+	$_SESSION['language'] = 'eng';
+}

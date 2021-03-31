@@ -50,13 +50,13 @@ $templates = new Template();
 </div>
 
 <div id="history_header"><?php echo $DOCUMENT['history'];?></div>
-<div id="history_of_visit">
+<div id="history_of_booking">
 	<div id="book_info">
 		<?php $templates->insertHistoryBookInfo(); ?>
 	</div>
 </div>
-<?php if (isset($_SESSION['Error message'])) {
-	$templates::errorAlert($_SESSION['Error message']);
-	$_SESSION['Error message'] = null;
+<?php if (isset($_SESSION['Error code'])) {
+	$templates::errorAlert($_SESSION['Error code']);
+	$_SESSION['Error code'] = null;
 } ?>
 </body>

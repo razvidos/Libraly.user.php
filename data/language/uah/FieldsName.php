@@ -1,9 +1,9 @@
 <?php
 $FIELD_NAMEs['SEARCH'] = array(
-	'Автор',
-	'Назва',
-	'Тег',
-	'Рік публікації'
+	'author' => 'Автор',
+	'title' => 'Назва',
+	'tag' => 'Тег',
+	'year_published' => 'Рік публікації'
 );
 $FIELD_NAMEs['TIME'] = array(
 	'Дата початку',

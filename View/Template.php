@@ -3,8 +3,7 @@
 require $_SERVER['DOCUMENT_ROOT'] . '/Model/History.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/data/language/'.$_SESSION['language'].'/FieldsName.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/data/language/'.$_SESSION['language'].'/ExceptionText.php';
-global $EXCEPT_MESS;
-global $FIELD_NAMEs;
+require $_SERVER['DOCUMENT_ROOT']. '/data/language/'.$_SESSION['language'].'/ExceptionText.php';
 
 
 class Template
@@ -25,12 +24,12 @@ class Template
     public function insertSearchForm($filters)
     {
         $formFields = $this->formFields;
-        foreach ($formFields as $formFieldName)
+        foreach ($formFields as $formFieldName => $formFieldTitle)
         {
         	if(!isset($filters[$formFieldName]))
         		{$filters[$formFieldName] = '';}
             echo "
-                <lable>".ucfirst($formFieldName)."</lable>
+                <lable>".$formFieldTitle."</lable>
                 <br>
                 <input 
                     type='text' 
@@ -91,7 +90,7 @@ class Template
     public static function errorAlert($message){
     	echo
 		'<script type="text/javascript">'
-			.'alert("'.$message.'");'
+			.'alert("'.$GLOBALS['EXCEPT_MESS'][$message].'");'
 		.'</script>';
 	}
 }

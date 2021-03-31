@@ -1,4 +1,4 @@
-#search, #search_header, #history_of_visit, #book_info, #time_info{
+#search, #search_header, #history_of_booking, #book_info, #time_info{
     display: grid; 
 }
 #search, #search_header{
@@ -21,14 +21,14 @@
     background-color: #a7bbd5;
 }
 
-#history_of_visit{
+#history_of_booking{
     background-color: blanchedalmond;
 }
 #history_header{
     background-color: #f6e2c6;
     width: 100%;
 }
-#history_of_visit > #book_info{
+#history_of_booking > #book_info{
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     margin-right: 6px;    
     padding: 2px;
