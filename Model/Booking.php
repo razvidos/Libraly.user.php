@@ -9,7 +9,12 @@
 class Booking
 {
 
-    public static function add($bookID)
+	/**
+	 * @param $bookID
+	 *
+	 * Add book to booking list.
+	 */
+	public static function add($bookID)
     {
 		global $DB;
 		global $USER;
@@ -20,7 +25,12 @@ class Booking
 		$DB->myQuery($sql);
     }
 
-    public static function remove($bookID)
+	/**
+	 * @param $bookID
+	 *
+	 * Remove book from booking list.
+	 */
+	public static function remove($bookID)
     {
 		global $DB;
 		global $USER;
@@ -35,7 +45,12 @@ class Booking
 		$DB->myQuery($sql);
     }
 
-    public static function getList(): array
+	/**
+	 * @return array
+	 *
+	 * get booking list of booking.
+	 */
+	public static function getList(): array
     {
 		$bookingList = array();
 		global $DB;

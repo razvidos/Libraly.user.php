@@ -11,12 +11,21 @@ class Search
 	private array $filter;
 
 
-    public function __construct($filter)
+	/**
+	 * Search constructor.
+	 * @param $filter
+	 *
+	 * Set filter for search.
+	 */
+	public function __construct($filter)
     {
         $this->filter = $filter;
     }
 
-    public function getBooks(): array
+	/**
+	 * @return array Books list
+	 */
+	public function getBooks(): array
     {
     	global $DB;
         $filter = $this->filter;

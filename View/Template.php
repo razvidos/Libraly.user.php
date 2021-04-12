@@ -5,7 +5,10 @@ require $_SERVER['DOCUMENT_ROOT'] . '/data/language/'.$_SESSION['language'].'/Fi
 require $_SERVER['DOCUMENT_ROOT'] . '/data/language/'.$_SESSION['language'].'/ExceptionText.php';
 require $_SERVER['DOCUMENT_ROOT']. '/data/language/'.$_SESSION['language'].'/ExceptionText.php';
 
-
+/*!
+ * Dynamic auto generation for html elements.
+ *
+*/
 class Template
 {
     private array $formFields;
@@ -13,7 +16,11 @@ class Template
     private array $bookingList;
     private array $historyList;
 
-    public function __construct()
+	/**
+	 * Template constructor.
+	 * Initialize Booking list, History list and fields title&
+	 */
+	public function __construct()
     {
 		$this->formFields = $GLOBALS['FIELD_NAMEs']['SEARCH'];
 		$this->timeFields = $GLOBALS['FIELD_NAMEs']['TIME'];
@@ -21,7 +28,12 @@ class Template
 		$this->historyList = History::getList();
     }
 
-    public function insertSearchForm($filters)
+	/**
+	 * @param $filters
+	 *
+	 * Search form will be filling search value from this session, if is it.
+	 */
+	public function insertSearchForm($filters)
     {
         $formFields = $this->formFields;
         foreach ($formFields as $formFieldName => $formFieldTitle)

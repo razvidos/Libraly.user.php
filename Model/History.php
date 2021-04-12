@@ -8,7 +8,12 @@
 
 class History
 {
-    public static function getList() : array
+	/**
+	 * @return array - information about booking.
+	 *
+	 * AUTHOR, TITLE, TAG, YEAR_PUBLISHED, DATE_FROM DATA_TO
+	 */
+	public static function getList() : array
     {
 		global $DB;
 		global $USER;

@@ -3,7 +3,13 @@
 
 class YearFormat
 {
-	public static function setYear($splitYear)
+	/**
+	 * @param $splitYear
+	 * /return int year in 4digit format
+	 * /example setYear 1995, 2009
+	 * 123123
+	 */
+	public static function setYear($splitYear) :int
 	{
 		if (count($splitYear) == 1) {
 			$_SESSION['year_published'] = '200' . $_SESSION['year_published'];

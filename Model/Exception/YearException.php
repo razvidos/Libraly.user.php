@@ -4,6 +4,17 @@ require 'YearFormat.php';
 
 class YearException
 {
+	/**
+	 * @return string [\n
+	 *     YEAR_IS_NOT_NUMERIC\n
+	 *     YEAR_MORE_THAT_4_DIGITS\n
+	 *     YEAR_IS_TOO_LARGE\n
+	 * ]
+	 *
+	 * definition error code for year field.
+	 *
+	 *
+	 */
 	public static function getErrorCode() :string
 	{
 
